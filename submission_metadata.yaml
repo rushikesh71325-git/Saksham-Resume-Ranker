@@ -1,0 +1,58 @@
+# Redrob Hackathon — Submission Metadata
+
+team_name: "Team Saksham"
+
+primary_contact:
+  name: "Rushikesh Jadhav"
+  email: "rushikesh71325@gmail.com"   
+  phone: "+91-7757881697"        
+
+team_members:
+  - name: "Rushikesh Jadhav"
+    email: "rushikesh71325@gmail.com"
+    role: "Ai Engineer"
+  - name: "Omkar Yadav"
+    email: "omkarangyadhav@gmail.com"
+    role: "Devloper"
+
+github_repo: "https://github.com/rushikesh71325-git/Saksham-Resume-Ranker.git"
+
+sandbox_link: "https://huggingface.co/spaces/rushikesh71325/Saksham-Resume-Ranker"
+
+reproduce_command: "python rank.py --features ./precomputed_features.jsonl --candidates ./candidates.jsonl.gz --out ./team_saksham.csv"
+
+compute:
+  platform: "Standard Windows PC"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11+"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 10
+
+ai_tools_used:
+  - "Claude"
+  - "Gemini"
+
+ai_usage_summary: |
+  Used AI assistants to design the architecture, implement feature extraction heuristics, 
+  ensure the compute constraints were met by separating the logic into precompute/rank stages,
+  and parse out the complex requirements of the job description.
+
+methodology_summary: |
+  Two-stage architecture to respect strict compute constraints. Stage 1 (offline precompute) streams 
+  the 100K JSONL and applies strong heuristics to extract numerical representations for role alignment, 
+  career substance (evidence of building retrieval systems), tech depth, behavioral availability, 
+  and location fit. Honeypots (date inconsistencies, expert skills with 0 months) are flagged. 
+  Stage 2 (ranking) runs in < 5 seconds on CPU: loads the optimized features, applies weighted 
+  scoring, handles tie-breaks deterministically, and dynamically builds non-hallucinated reasoning 
+  sentences by referencing exact profile facts.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

@@ -1,0 +1,32 @@
+# Standard Python ignores
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+.venv/
+
+# Large Data & Output Files
+candidates.jsonl
+candidates.jsonl.gz
+precomputed_features.jsonl
+temp_features.jsonl
+converted_input.jsonl
+sandbox_submission.csv
+saksham_submission.csv
+submission.csv
+
+# Hackathon Provided Unnecessary Files (Instructions & References)
+README.ini
+sample_candidates.json
+sample_submission.csv
+Submission Specification — Redrob Hackathon.txt
+Redrob Behavioral Signals — Reference.txt
+Recruiters go through hundreds of profile.md
+submission_metadata_template.yaml
+Job Description.sty
+candidate_schema.json
+
+# (Note: mini_candidates.jsonl is NOT ignored because app.py uses it as the default sample on HuggingFace)
